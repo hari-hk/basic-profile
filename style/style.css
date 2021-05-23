@@ -37,6 +37,8 @@ body {
     text-transform: uppercase;
     font-weight: bold;
     margin: 4px auto;
+    text-align: center;
+    line-height: 1.2;
 }
 .container h1 span {
     font-weight: 500;
