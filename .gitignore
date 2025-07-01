@@ -64,3 +64,9 @@ node_modules/
 
 # dotenv environment variables file
 .env
+
+
+
+# generated files 
+assets/css
+assets/script
