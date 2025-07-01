@@ -1,0 +1,17 @@
+{
+  "name": "hari hara kumar portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "sass": "sass --watch styles:assets/css",
+    "dev": "tsc"
+  },
+  "keywords": [],
+  "author": "hari hara kumar",
+  "license": "ISC",
+  "packageManager": "pnpm@10.12.1",
+  "devDependencies": {
+    "sass": "^1.89.2"
+  }
+}
