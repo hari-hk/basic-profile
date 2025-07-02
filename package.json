@@ -6,7 +6,8 @@
   "scripts": {
     "sass:watch": "sass --watch styles:assets/css",
     "ts:watch": "tsc -w",
-    "dev": "npm-run-all -p ts:watch sass:watch"
+    "dev": "npm-run-all -p ts:watch sass:watch",
+    "build": "sass styles:assets/css && tsc"
   },
   "keywords": [],
   "author": "hari hara kumar",
