@@ -28,21 +28,17 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # If your project requires pnpm build (e.g. Tailwind, webpack, etc.), run it here
+      # If your project requires NPM build (e.g. Tailwind, webpack, etc.), run it here
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'pnpm'
 
-      - name: Install pnpm
-        run: npm install -g pnpm
+      - name: Install NPM dependencies
+        run: npm install
 
-      - name: Install dependencies with pnpm
-        run: pnpm install
-
-      - name: Build assets using pnpm 
-        run: pnpm run build
+      - name: Build assets using NPM 
+        run: npm run build
 
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
