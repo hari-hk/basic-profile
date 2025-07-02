@@ -19,7 +19,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  checkout:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -27,8 +27,8 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
-
-      # If your project requires NPM build (e.g. Tailwind, webpack, etc.), run it here
+  build:
+    steps:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
