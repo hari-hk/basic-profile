@@ -77,6 +77,9 @@ Managed the full lifecycle from development to publishing in App Store and Play 
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme') || 'default';
+  applyTheme(savedTheme);
+
   const experienceElement = document.getElementById(
     'experience'
   ) as HTMLElement;
@@ -86,6 +89,48 @@ document.addEventListener('DOMContentLoaded', () => {
   const showContactButton = document.getElementById(
     'show-contacts'
   ) as HTMLElement;
+  const themeSwitchButton = document.getElementById(
+    'theme-switch'
+  ) as HTMLElement;
+
+  themeSwitchButton.addEventListener('click', () => {
+    let currentTheme = localStorage.getItem('theme') || 'default';
+    let nextTheme;
+
+    switch (currentTheme) {
+      case 'default':
+        nextTheme = 'light';
+        break;
+      case 'light':
+        nextTheme = 'warm';
+        break;
+      case 'warm':
+        nextTheme = 'forest';
+        break;
+      case 'forest':
+        nextTheme = 'default';
+        break;
+      default:
+        nextTheme = 'default';
+    }
+    applyTheme(nextTheme);
+  });
+
+  // Function to apply a theme
+  function applyTheme(themeName: string) {
+    const body = document.body as HTMLElement;
+    // Remove all existing theme classes
+    body.classList.remove('theme-light', 'theme-warm', 'theme-forest');
+
+    // Add the new theme class
+    if (themeName !== 'default') {
+      // 'default' theme doesn't need a class, it's the base :root
+      body.classList.add(`theme-${themeName}`);
+    }
+
+    // Optionally save the preference to localStorage
+    localStorage.setItem('theme', themeName);
+  }
 
   showContactButton.addEventListener('click', () => {
     if (profileBar.classList.contains('active')) {
